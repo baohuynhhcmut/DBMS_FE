@@ -19,10 +19,10 @@ const Product = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 10;
 
-  const [loading,setLoading] = useState(false)
+  // const [loading,setLoading] = useState(false)
 
   useEffect(() => {
-    setLoading(true)
+   
     const fetchAPI = async () => {
       const endpoint = `${config?.baseUrl}products`;
         try {
@@ -33,9 +33,7 @@ const Product = () => {
           console.log(error);
           throw error;
         }
-      setTimeout( async () => {
-        setLoading(false)
-      },1000)
+      
     };
     fetchAPI();
 
@@ -64,8 +62,7 @@ const Product = () => {
   return (
 
     <>
-      {loading ? <Loading /> :(
-          <Container className="">
+      <Container className="">
           <div className="flex gap-12 flex-col md:flex-row md:px-0 px-10">
             <div className="flex flex-col">
               <h2 className="text-nowrap text-xl font-bold flex items-center gap-3 group">
@@ -118,7 +115,6 @@ const Product = () => {
             </div>
           </div>
         </Container>
-      )}
     </>
   );
 };

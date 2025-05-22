@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { logo } from "../assets";
 import { IoSearchOutline,IoClose } from "react-icons/io5";
-import { FiShoppingBag, FiStar, FiUser } from "react-icons/fi";
+import { FiShoppingBag, FiStar, FiUser  } from "react-icons/fi";
 import Container from "./Container";
 import { headerConfig } from "../config/header-config";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ import { IoIosLogIn } from "react-icons/io";
 import MenuUser from "./MenuUser";
 import { IoLogOutOutline } from "react-icons/io5";
 import { getAuth, signOut } from "firebase/auth";
-
+import { MdDashboard } from "react-icons/md";
 const Header = () => {
 
     const [searchText,setSearchText] = useState('')
@@ -186,9 +186,9 @@ const Header = () => {
                       </Link>
                     )}
 
-                    <Link  to={'/favorite'} className="relative block">
-                        <FiStar className="hover:text-skyText cursor-pointer duration-200 "/>
-                        <span className="inline-flex items-center justify-center text-whiteText absolute -top-2 -right-2 bg-red-500 text-[9px] rounded-full w-4 h-4">{favoriteProduct.length}</span>
+                    <Link  to={'/dashboard'} className="relative block">
+                        <MdDashboard className="hover:text-skyText cursor-pointer duration-200 "/>
+                        {/* <span className="inline-flex items-center justify-center text-whiteText absolute -top-2 -right-2 bg-red-500 text-[9px] rounded-full w-4 h-4">{favoriteProduct.length}</span> */}
                     </Link>
                     <Link to={'/cart'} className="relative block">
                         <FiShoppingBag className="hover:text-skyText cursor-pointer duration-200 " />

@@ -8,27 +8,23 @@ import Loading from "./ui/Loading"
 
 function App() {
 
-  const [loading,setLoading ] = useState(false)
-  useEffect(() => {
-    const loadingImage = () => {
-      setLoading(true)
-      setTimeout(() => setLoading(false),1000)
-    }
-    loadingImage()
-  },[])
+  // const [loading,setLoading ] = useState(false)
+  // useEffect(() => {
+  //   const loadingImage = () => {
+  //     setLoading(true)
+  //     setTimeout(() => setLoading(false),1000)
+  //   }
+  //   loadingImage()
+  // },[])
 
 
     return(
       <>
-        {loading ? <Loading /> : (
-          <>
-             <BannerCategory />
-          <HomeBanner />
-          <Highlight />
-          <CategorySection />
-          <ProductSection />
-          </>
-        )}
+        <BannerCategory />
+        <HomeBanner />
+        <Highlight />
+        <CategorySection />
+        <ProductSection />
       </>
     )
 }
